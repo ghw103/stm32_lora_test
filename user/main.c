@@ -10,18 +10,25 @@
 ********************************************************************************
 * .
 *******************************************************************************/
-
 #include "stm32f10x.h"
+#include "stm32f10x_conf.h"
 
-
-
+#include "bsp.h"
+#include "sys_tick_delay.h" 
 
 static void prvSetupHardware( void );
 
 int  main(void)
 {
 	prvSetupHardware();
-	
+	LED_Config();
+	Sys_delay_init();
+	while(1)
+	{
+		Sys_delay_ms(200);
+		LED1_TOGGLE;
+		
+	}
 	return 0;
 }
 
@@ -72,5 +79,5 @@ static void prvSetupHardware( void )
 	NVIC_PriorityGroupConfig( NVIC_PriorityGroup_4 );
 
 	/* Configure HCLK clock as SysTick clock source. */
-	SysTick_CLKSourceConfig( SysTick_CLKSource_HCLK ); 
+	//SysTick_CLKSourceConfig( SysTick_CLKSource_HCLK ); 
 }
