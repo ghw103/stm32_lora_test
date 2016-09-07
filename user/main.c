@@ -15,6 +15,7 @@
 
 #include "bsp.h"
 #include "sys_tick_delay.h" 
+#include "touch_key.h" 
 
 static void prvSetupHardware( void );
 
@@ -25,6 +26,10 @@ int  main(void)
 	Sys_delay_init();
 	while(1)
 	{
+		if(Key1San() == Bit_SET)
+		{
+			LED2_TOGGLE; 
+		}
 		Sys_delay_ms(200);
 		LED1_TOGGLE;
 		
