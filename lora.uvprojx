@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\CMSIS\CM3\CoreSupport;.\STM32F10x_StdPeriph_Driver\inc;.\CMSIS\CM3\DeviceSupport\ST\STM32F10x;.\bsp;.\common;.\user</IncludePath>
+              <IncludePath>.\CMSIS\CM3\CoreSupport;.\STM32F10x_StdPeriph_Driver\inc;.\CMSIS\CM3\DeviceSupport\ST\STM32F10x;.\bsp;.\common;.\user;.\driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -425,6 +425,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>touch_key.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\driver\touch_key.c</FilePath>
+            </File>
+            <File>
+              <FileName>sys_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\driver\sys_adc.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::Device</GroupName>
         </Group>
       </Groups>
@@ -434,12 +449,6 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="Device" Cgroup="DMA" Cvendor="Keil" Cversion="1.2" condition="STM32F1xx CMSIS">
-        <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.1.0"/>
-        <targetInfos>
-          <targetInfo name="Target 1"/>
-        </targetInfos>
-      </component>
       <component Cclass="Device" Cgroup="GPIO" Cvendor="Keil" Cversion="1.2" condition="STM32F1xx CMSIS">
         <package name="STM32F1xx_DFP" schemaVersion="1.2" url="http://www.keil.com/pack/" vendor="Keil" version="2.1.0"/>
         <targetInfos>
