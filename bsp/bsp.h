@@ -1,7 +1,7 @@
 #ifndef __BSP_H
 #define __BSP_H
 
-
+#include "stm32f10x.h"
 
 #define LED1_GPIO_PORT		GPIOB
 #define LED1_GPIO_NUM   	8
@@ -23,7 +23,7 @@
 
 
 void LED_Config(void);
-
+void TIM4_CH1_PWM_Init(u16 arr,u16 psc);
 
 
 
