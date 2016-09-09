@@ -188,7 +188,7 @@ void SX1276OnTimeoutIrq( void );
  */
 const RadioRegisters_t RadioRegsInit[] = RADIO_INIT_REGISTERS_VALUE;
 
-/*!
+/*!  
  * Constant values need to compute the RSSI value
  */
 #define RSSI_OFFSET_LF                              -164
